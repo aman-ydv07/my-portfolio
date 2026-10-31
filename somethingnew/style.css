@@ -1,0 +1,779 @@
+
+/* =========================================
+   1. GLOBAL RESET AND CSS VARIABLES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Background colours */
+    --bg: #080b1a;
+    --navbar: #0b1024;
+    --section: #0d1430;
+
+    /* Card colours */
+    --card: #151d3b;
+    --card-hover: #202b50;
+
+    /* Borders */
+    --border: #303d68;
+
+    /* Accent colours */
+    --purple: #8b5cf6;
+    --blue: #38bdf8;
+    --accent: #a78bfa;
+    --highlight: #38bdf8;
+
+    /* Text colours */
+    --text: #f8fafc;
+    --heading: #f1f5ff;
+    --body-text: #aab6d3;
+    --muted: #b8c2dc;
+    --label: #8b9bbf;
+}
+
+
+/* =========================================
+   2. BODY AND TYPOGRAPHY
+========================================= */
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--heading);
+    font-weight: 700;
+}
+
+h4 {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+p {
+    color: var(--body-text);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: var(--highlight);
+}
+
+
+/* =========================================
+   3. NAVIGATION BAR
+========================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 18px 40px;
+    background-color: var(--navbar);
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--body-text);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--purple);
+}
+
+
+/* =========================================
+   4. HERO / HOME SECTION
+========================================= */
+
+.home {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 40px;
+    background: linear-gradient(120deg, #080b1a, #111943);
+}
+
+.leftSec {
+    flex: 4;
+    padding: 25px;
+    min-width: 0;
+}
+
+.leftSec > p:first-child {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.leftSec h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.leftSec h2 {
+    color: var(--highlight);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.leftSec > p:last-child {
+    max-width: 550px;
+    margin-top: 20px;
+    line-height: 1.9;
+}
+
+/* Profile image in the hero section */
+
+.profile-image {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image img {
+    width: 100%;
+    max-width: 280px;
+    height: 320px;
+    object-fit: cover;
+    border: 2px solid var(--purple);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+/* My journey card */
+
+.rightSec {
+    flex: 3;
+    padding: 25px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    min-width: 0;
+}
+
+
+/* =========================================
+   5. COMMON SECTION STYLING
+========================================= */
+
+.aboutme,
+.experience,
+.projects,
+.educert,
+.contactme,
+.techStack {
+    width: 100%;
+    padding: 30px;
+    background-color: var(--section);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+
+/* =========================================
+   6. COMMON CARD STYLING
+========================================= */
+
+.leftside,
+.rightside,
+.block1,
+.experience-item,
+.project-card,
+.items,
+.contactitems {
+    padding: 20px;
+    background-color: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+
+/* =========================================
+   7. ABOUT ME SECTION
+========================================= */
+
+.twosecs {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.leftside,
+.rightside {
+    flex: 1;
+}
+
+
+/* =========================================
+   8. TECH STACK SECTION
+========================================= */
+
+.blocks {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.block1 {
+    flex: 1;
+    min-width: 150px;
+}
+
+.block1:hover {
+    background-color: var(--card-hover);
+    border-color: var(--purple);
+    transform: translateY(-5px);
+}
+
+
+/* =========================================
+   9. EXPERIENCE SECTION
+========================================= */
+
+.experience-timeline {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+.experience-item {
+    flex: 1;
+}
+
+.experience-item li {
+    color: var(--body-text);
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   10. PROJECTS SECTION
+========================================= */
+
+.project-container {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+.project-card {
+    flex: 1;
+    transition: 0.3s ease;
+}
+
+.project-preview {
+    padding: 35px 15px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #25245b, #16466c);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.project-tech span {
+    padding: 5px 12px;
+    background-color: #29265c;
+    color: #c4b5fd;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.project-links {
+    display: flex;
+    gap: 20px;
+}
+
+.project-links a {
+    color: var(--blue);
+}
+
+.project-card:hover {
+    background-color: var(--card-hover);
+    border-color: var(--purple);
+    transform: translateY(-5px);
+}
+
+
+/* =========================================
+   11. EDUCATION AND CERTIFICATIONS
+========================================= */
+
+.edu-cert {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+.items {
+    flex: 1;
+    transition: 0.3s ease;
+}
+
+.items:hover {
+    background-color: var(--card-hover);
+    border-color: var(--purple);
+    transform: translateY(-5px);
+}
+
+
+/* =========================================
+   12. CONTACT SECTION
+========================================= */
+
+.contactme {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 30px;
+}
+
+/* Left column: contact details */
+
+.contactitems:first-child {
+    flex: 4;
+    background: transparent;
+    border: none;
+}
+
+/* Right column: contact form */
+
+.contactitems:last-child {
+    flex: 6;
+    padding: 25px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.contactitems h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.contactitems h3 {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+/* Form fields */
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    background-color: var(--section);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Submit button */
+
+.contactitems button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, var(--purple), #5b4bdf);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contactitems button:hover {
+    background: linear-gradient(90deg, #7044d8, #3478e5);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   13. SECTION LABELS
+========================================= */
+
+.section-heading > p:first-child {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   14. FOOTER
+========================================= */
+
+.footer {
+    padding: 25px 40px;
+    background-color: var(--navbar);
+    color: var(--muted);
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================================
+   15. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .home,
+    .twosecs,
+    .blocks,
+    .experience-timeline,
+    .project-container,
+    .edu-cert,
+    .contactme {
+        flex-direction: column;
+    }
+
+    .profile-image img {
+        max-width: 220px;
+        height: 260px;
+    }
+
+    .contactitems:first-child,
+    .contactitems:last-child {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+/* Typing animation container */
+
+#typing-name {
+    border-right: 3px solid var(--purple);
+    padding-right: 5px;
+    overflow-wrap: break-word;
+    white-space: normal;
+    animation: cursorBlink 0.7s infinite;
+}
+
+@keyframes cursorBlink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+
+/* TABLETS - Screens up to 1024px */
+
+@media (max-width: 1024px) {
+
+    .home {
+        gap: 15px;
+        padding: 25px;
+    }
+
+    .leftSec {
+        flex: 4;
+        padding: 10px;
+    }
+
+    .profile-image {
+        flex: 2;
+    }
+
+    .profile-image img {
+        max-width: 220px;
+        height: 270px;
+    }
+
+    .rightSec {
+        flex: 3;
+        padding: 18px;
+    }
+
+    .aboutme,
+    .experience,
+    .projects,
+    .educert,
+    .contactme,
+    .techStack {
+        padding: 22px;
+    }
+
+    .experience-timeline,
+    .project-container {
+        flex-wrap: wrap;
+    }
+
+    .experience-item,
+    .project-card {
+        flex: 1 1 280px;
+    }
+}
+
+/* Smooth scrolling for navbar links */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+/* Prevent section headings from hiding behind navbar */
+
+section {
+    scroll-margin-top: 85px;
+}
+
+/* Download Resume Button */
+
+.resume-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+
+    background: linear-gradient(90deg, var(--purple), #5b4bdf);
+    color: white;
+
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+    background: linear-gradient(90deg, #7044d8, #3478e5);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(139, 92, 246, 0.3);
+}
+
+
+/* MOBILE AND SMALL TABLETS - Screens up to 768px */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Hero section */
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+    }
+
+    .leftSec,
+    .profile-image,
+    .rightSec {
+        width: 100%;
+        flex: none;
+    }
+
+    .leftSec {
+        padding: 15px 5px;
+    }
+
+    .leftSec > p:last-child {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-image img {
+        max-width: 220px;
+        height: 260px;
+    }
+
+    .rightSec {
+        text-align: left;
+    }
+
+    /* About section */
+
+    .twosecs {
+        flex-direction: column;
+    }
+
+    /* Skills */
+
+    .blocks {
+        flex-wrap: wrap;
+    }
+
+    .block1 {
+        flex: 1 1 200px;
+    }
+
+    /* Experience and projects */
+
+    .experience-timeline,
+    .project-container,
+    .edu-cert {
+        flex-direction: column;
+    }
+
+    .experience-item,
+    .project-card,
+    .items {
+        width: 100%;
+    }
+
+    /* Contact section */
+
+    .contactme {
+        flex-direction: column;
+    }
+
+    .contactitems:first-child,
+    .contactitems:last-child {
+        width: 100%;
+        flex: none;
+    }
+
+    /* General spacing */
+
+    .aboutme,
+    .experience,
+    .projects,
+    .educert,
+    .contactme,
+    .techStack {
+        padding: 20px 15px;
+    }
+}
+
+
+/* SMALL MOBILE PHONES - Screens up to 480px */
+
+@media (max-width: 480px) {
+
+    .navbar h1 {
+        font-size: 19px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .leftSec h1 {
+        font-size: 32px;
+    }
+
+    .leftSec h2 {
+        font-size: 19px;
+    }
+
+    .profile-image img {
+        max-width: 190px;
+        height: 230px;
+    }
+
+    .contactitems h2 {
+        font-size: 25px;
+    }
+
+    .contactitems h3 {
+        font-size: 20px;
+    }
+
+    .project-links {
+        flex-wrap: wrap;
+    }
+}
